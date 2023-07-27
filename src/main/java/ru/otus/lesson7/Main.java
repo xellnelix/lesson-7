@@ -65,8 +65,11 @@ public class Main {
 
 	public static void nullifyDiagonal(int[][] arr) {
 		for (int i = 0; i < arr.length; i++) {
-			arr[i][i] = 0;
-			arr[i][arr.length - 1 - i] = 0;
+			for (int j = 0; j < arr[i].length; j++) {
+				if (i == j || i == arr.length - 1 - j) {
+					arr[i][j] = 0;
+				}
+			}
 		}
 	}
 
